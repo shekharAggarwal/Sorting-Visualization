@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sorting/presentation/journeys/selectSorting/web_view_select_sorting.dart';
 
 class SelectSorting extends StatefulWidget {
   const SelectSorting({Key? key}) : super(key: key);
@@ -11,7 +12,7 @@ class _SelectSortingState extends State<SelectSorting> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Container(),
+      body:WebViewSelectSort(),
     );
   }
 }

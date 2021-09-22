@@ -11,6 +11,7 @@ class InsertionSortAlgo extends StatefulWidget {
 
 class _InsertionSortAlgoState extends State<InsertionSortAlgo>
     with SingleTickerProviderStateMixin {
+
   List<int> arr = [25, 45, 12, 36, 89, 55, 46, 22, 19, 10, 1];
 
   List<BubbleModel> ls = List<BubbleModel>.empty(growable: true);
@@ -19,6 +20,7 @@ class _InsertionSortAlgoState extends State<InsertionSortAlgo>
     borderRadius: BorderRadius.circular(25.0),
     color: Colors.green,
   );
+
   final BoxDecoration redDecoration = BoxDecoration(
     borderRadius: BorderRadius.circular(25.0),
     color: Colors.red,
@@ -29,10 +31,13 @@ class _InsertionSortAlgoState extends State<InsertionSortAlgo>
     super.initState();
     arr.map((e) {
       ls.add(BubbleModel(
-          widget: Bubble(decoration: greenDecoration, n: e),
+          widget: Bubble(
+            decoration: greenDecoration,
+            n: e,
+          ),
           offset: Offset.zero));
     }).toList();
-   /* WidgetsBinding.instance!.addPostFrameCallback((_) {
+    /* WidgetsBinding.instance!.addPostFrameCallback((_) {
       sort();
     });*/
   }
@@ -64,7 +69,7 @@ class _InsertionSortAlgoState extends State<InsertionSortAlgo>
             children: ls
                 .map(
                   (e) => e.widget,
-                )
+            )
                 .toList(),
           )
         ],

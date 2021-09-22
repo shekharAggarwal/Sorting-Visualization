@@ -14,6 +14,14 @@ class _BubbleState extends State<Bubble> {
   GlobalKey pos = GlobalKey();
 
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      getPositions();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -33,9 +41,10 @@ class _BubbleState extends State<Bubble> {
     );
   }
 
-  /*_getPositions() {
-    final RenderObject? renderBoxRed = pos.currentContext!.findRenderObject();
-    final positionRed = renderBoxRed!.localTo(Offset.zero);
-    print("POSITION of Red: $renderBoxRed ");
-  }*/
+  getPositions() {
+    final RenderBox? renderBoxRed =
+        pos.currentContext!.findRenderObject() as RenderBox;
+    final positionRed = renderBoxRed!.localToGlobal(Offset.zero);
+    print("POSITION of Red: ${positionRed} ");
+  }
 }

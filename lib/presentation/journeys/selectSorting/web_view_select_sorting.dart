@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sorting/common/constants/strings.dart';
-import 'package:sorting/presentation/journeys/insertion_sort/insertionSortAlgo.dart';
+import 'package:sorting/presentation/journeys/insertionSort/insertion_sort_algo.dart';
 
 class WebViewSelectSort extends StatelessWidget {
   const WebViewSelectSort({Key? key}) : super(key: key);

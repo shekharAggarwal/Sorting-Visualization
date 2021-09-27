@@ -29,91 +29,190 @@ class _InsertionSortAlgoState extends State<InsertionSortAlgo>
   List<BubbleModel> arr = [
     BubbleModel(
       25,
-      BoxDecoration(
+      [const Offset(8.0, 58.0)],
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25.0),
         color: Colors.green,
       ),
-      const Offset(8.0, 58.0),
+      i: 0,
     ),
     BubbleModel(
       45,
-      BoxDecoration(
+      [const Offset(74.0, 58.0)],
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25.0),
         color: Colors.green,
       ),
-      const Offset(74.0, 58.0),
+      i: 1,
     ),
     BubbleModel(
       12,
-      BoxDecoration(
+      [const Offset(140.0, 58.0)],
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25.0),
         color: Colors.green,
       ),
-      const Offset(140.0, 58.0),
+      i: 2,
     ),
     BubbleModel(
       36,
-      BoxDecoration(
+      [const Offset(206.0, 58.0)],
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25.0),
         color: Colors.green,
       ),
-      const Offset(206.0, 58.0),
+      i: 3,
     ),
     BubbleModel(
       89,
-      BoxDecoration(
+      [const Offset(272.0, 58.0)],
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25.0),
         color: Colors.green,
       ),
-      const Offset(272.0, 58.0),
+      i: 4,
     ),
     BubbleModel(
       55,
-      BoxDecoration(
+      [const Offset(338.0, 58.0)],
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25.0),
         color: Colors.green,
       ),
-      const Offset(338.0, 58.0),
+      i: 5,
     ),
     BubbleModel(
       46,
-      BoxDecoration(
+      [const Offset(404.0, 58.0)],
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25.0),
         color: Colors.green,
       ),
-      const Offset(404.0, 58.0),
+      i: 6,
     ),
     BubbleModel(
       22,
-      BoxDecoration(
+      [const Offset(470.0, 58.0)],
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25.0),
         color: Colors.green,
       ),
-      const Offset(470.0, 58.0),
+      i: 7,
     ),
     BubbleModel(
       19,
-      BoxDecoration(
+      [const Offset(536.0, 58.0)],
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25.0),
         color: Colors.green,
       ),
-      const Offset(536.0, 58.0),
+      i: 8,
     ),
     BubbleModel(
       10,
-      BoxDecoration(
+      [const Offset(602.0, 58.0)],
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25.0),
         color: Colors.green,
       ),
-      const Offset(602.0, 58.0),
+      i: 9,
     ),
     BubbleModel(
       1,
-      BoxDecoration(
+      [const Offset(668.0, 58.0)],
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25.0),
         color: Colors.green,
       ),
-      const Offset(668.0, 58.0),
+      i: 10,
+    ),
+  ];
+
+  List<BubbleModel> view = [
+    BubbleModel(25, [const Offset(8.0, 58.0)],
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25.0),
+          color: Colors.green,
+        )),
+    BubbleModel(
+      45,
+      [const Offset(74.0, 58.0)],
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        color: Colors.green,
+      ),
+    ),
+    BubbleModel(
+      12,
+      [const Offset(140.0, 58.0)],
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        color: Colors.green,
+      ),
+    ),
+    BubbleModel(
+      36,
+      [const Offset(206.0, 58.0)],
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        color: Colors.green,
+      ),
+    ),
+    BubbleModel(
+      89,
+      [const Offset(272.0, 58.0)],
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        color: Colors.green,
+      ),
+    ),
+    BubbleModel(
+      55,
+      [const Offset(338.0, 58.0)],
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        color: Colors.green,
+      ),
+    ),
+    BubbleModel(
+      46,
+      [const Offset(404.0, 58.0)],
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        color: Colors.green,
+      ),
+    ),
+    BubbleModel(
+      22,
+      [const Offset(470.0, 58.0)],
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        color: Colors.green,
+      ),
+    ),
+    BubbleModel(
+      19,
+      [const Offset(536.0, 58.0)],
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        color: Colors.green,
+      ),
+    ),
+    BubbleModel(
+      10,
+      [const Offset(602.0, 58.0)],
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        color: Colors.green,
+      ),
+    ),
+    BubbleModel(
+      1,
+      [const Offset(668.0, 58.0)],
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        color: Colors.green,
+      ),
     ),
   ];
 
@@ -130,40 +229,45 @@ class _InsertionSortAlgoState extends State<InsertionSortAlgo>
     BubbleModel key;
     for (i = 1; i < arr.length; i++) {
       key = arr[i];
-      arr[i].decoration = redDecoration;
+      view[arr[i].i!].decoration = redDecoration;
       j = i - 1;
       setState(() {});
-      await Future.delayed(const Duration(milliseconds: 500));
+      await Future.delayed(const Duration(milliseconds: 300));
       while (j >= 0 && arr[j].n > key.n) {
+        Offset tempOffset = arr[j].offset.last;
+        arr[j].offset.add(key.offset.last);
         arr[j + 1] = arr[j];
+        key.offset.add(tempOffset);
         j = j - 1;
       }
       arr[j + 1] = key;
-      arr[j + 1].decoration = greenLightDecoration;
+      view[arr[j + 1].i!].decoration = greenLightDecoration;
+      arr.map((e) {
+        view[e.i!].offset = e.offset;
+      }).toList();
       setState(() {});
-      await Future.delayed(const Duration(microseconds: 500));
+      await Future.delayed(const Duration(milliseconds: 750));
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 50,
-          ),
-          Wrap(
-            children: arr
-                .map(
-                  (e) => Bubble(
-                    decoration: e.decoration,
-                    n: e.n,
-                  ),
-                )
-                .toList(),
-          ),
-        ],
+      body: Stack(
+        children: view
+            .map(
+              (e) => AnimatedPositioned(
+                duration: const Duration(milliseconds: 700),
+                top: e.offset.last.dy,
+                left: e.offset.last.dx,
+                child: Bubble(
+                  key: ValueKey(e.n.toString()),
+                  decoration: e.decoration!,
+                  n: e.n,
+                ),
+              ),
+            )
+            .toList(),
       ),
     );
   }

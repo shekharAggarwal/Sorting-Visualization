@@ -10,4 +10,15 @@ class Strings {
     "Radix Sort",
     "Bucket Sort"
   ];
+
+  static const List<String> CheckSortName = [
+    "QuickSort",
+    "BubbleSort",
+    "MergeSort",
+    "InsertionSort",
+    "SelectionSort",
+    "HeapSort",
+    "RadixSort",
+    "BucketSort"
+  ];
 }

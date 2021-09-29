@@ -231,7 +231,7 @@ class _InsertionSortAlgoState extends State<InsertionSortAlgo>
       key = arr[i];
       view[arr[i].i!].decoration = redDecoration;
       j = i - 1;
-      setState(() {});
+      if (mounted) setState(() {});
       await Future.delayed(const Duration(milliseconds: 300));
       while (j >= 0 && arr[j].n > key.n) {
         Offset tempOffset = arr[j].offset.last;
@@ -245,7 +245,7 @@ class _InsertionSortAlgoState extends State<InsertionSortAlgo>
       arr.map((e) {
         view[e.i!].offset = e.offset;
       }).toList();
-      setState(() {});
+      if (mounted) setState(() {});
       await Future.delayed(const Duration(milliseconds: 750));
     }
   }

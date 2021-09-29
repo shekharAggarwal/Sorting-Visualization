@@ -28,7 +28,7 @@ jobs:
         run: flutter build web --release
       
       - name: add cname file
-        run: echo https://sorting.shekhar.live/ > ./build/web/CNAME
+        run: echo sorting.shekhar.live > ./build/web/CNAME
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2

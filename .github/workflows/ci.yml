@@ -15,10 +15,10 @@ jobs:
         uses: actions/checkout@v2
 
 
-      - name: Clone flutter repository from stable channel with 2.5.1 version
+      - name: Clone flutter repository from stable channel with 2.5.2 version
         uses: subosito/flutter-action@v1
         with:
-          flutter-version: '2.5.1'
+          flutter-version: '2.5.2'
           channel: "stable"
 
       - name: Get dependencies

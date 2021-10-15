@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sorting/common/constants/page_configuration.dart';
+import 'package:sorting/presentation/journeys/bubbleSort/bubble_sort_algo.dart';
 import 'package:sorting/presentation/journeys/insertionSort/insertion_sort_algo.dart';
 import 'package:sorting/presentation/journeys/selectSorting/select_sorting.dart';
 import 'package:sorting/presentation/journeys/unknownScreen/unknown_screen.dart';
@@ -65,7 +66,7 @@ class PageRouteDelegate extends RouterDelegate<PageRoutePath>
                 key: ValueKey('InsertionSortAlgo'), child: InsertionSortAlgo())
           else if (_selectedSort == 'BubbleSort')
             const MaterialPage(
-                key: ValueKey('InsertionSortAlgo'), child: InsertionSortAlgo())
+                key: ValueKey('BubbleSortAlgo'), child: BubbleSort())
           else if (_selectedSort == 'MergeSort')
             const MaterialPage(
                 key: ValueKey('InsertionSortAlgo'), child: InsertionSortAlgo())

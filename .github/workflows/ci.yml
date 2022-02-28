@@ -12,45 +12,15 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - uses: bluefireteam/flutter-gh-pages@v7
 
-
-      - name: Clone flutter repository from stable channel with 2.5.2 version
+      - name: Clone flutter repository from stable channel
         uses: subosito/flutter-action@v1
         with:
-          flutter-version: '2.5.2'
           channel: "stable"
 
-      - name: Get dependencies
-        run: flutter pub get
-
-      - name: Build release project
-        run: flutter build web --release
-      
-      - name: add cname file
-        run: echo sorting.shekhar.live > ./build/web/CNAME
-
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v2
+      - name: Clone flutter-gh-pages repository
+        uses: bluefireteam/flutter-gh-pages@v7
         with:
-          name: production-files
-          path: ./build/web
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: production-files
-          path: ./build
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.TOKEN }}
-          publish_dir: ./build
+          baseHref: /Sorting-Visualization/
